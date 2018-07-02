@@ -9,14 +9,14 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D myRigidBody;
 	private bool playerMoving;
 	public Vector2 lastMove;
-
+	private Vector2 velocity;
 	private static bool playerExists;
 
 	private bool attacking;
 	public float attackTime;
 	private float attackTimeCounter;
 	public string startPoint;
-
+	public bool canMove;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -29,11 +29,18 @@ public class PlayerController : MonoBehaviour {
 		else {
 			Destroy (gameObject);
 		}
+		canMove = true;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (!canMove) {
+
+			myRigidBody.velocity = Vector2.zero;
+			return;
+		}
+
 		if (!attacking) {
 
 			// longer
@@ -44,11 +51,13 @@ public class PlayerController : MonoBehaviour {
 			Vector2 direction = new Vector2(movementInputX, movementInputY);
 			direction.Normalize();
 			direction *= moveSpeed * Time.deltaTime;
-
+			velocity = new Vector2 (movementInputX, movementInputY);
+			velocity *= moveSpeed;
 
 			if ((movementInputX != 0f && movementInputY !=0f) || (movementInputX !=0f || movementInputY != 0f))
 			{
-				transform.Translate(new Vector3(direction.x, direction.y, 0f));
+				//transform.Translate(new Vector3(direction.x, direction.y, 0f));
+				myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
 				myRigidBody.velocity = direction;
 				playerMoving = true;
 				lastMove = new Vector2 (movementInputX, movementInputY);
@@ -85,6 +94,10 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat ("MoveY", Input.GetAxisRaw ("Vertical"));
 		anim.SetBool ("PlayerMoving", playerMoving);
 		anim.SetFloat ("LastMoveX", lastMove.x);
-		anim.SetFloat ("LastMoveY", lastMove.y);	
+		anim.SetFloat ("LastMoveY", lastMove.y);
+
+
+
 	}
+
 }
