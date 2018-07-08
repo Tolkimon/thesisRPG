@@ -10,6 +10,9 @@ public class QuestObject : MonoBehaviour {
 	public string startText;
 	public string endText;
 
+	public bool isItemQuest;
+	public string targetItem;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +20,15 @@ public class QuestObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (isItemQuest) {
+
+			if (theQM.itemCollected == targetItem) {
+				theQM.itemCollected = null;
+				EndQuest ();
+
+			}
+
+		}
 	}
 
 	public void StartQuest(){

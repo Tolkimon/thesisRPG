@@ -9,7 +9,8 @@ public class DialogueManager : MonoBehaviour {
 	public Text dText; //needs "using UnityEngine.UI;"
 
 	public bool dialogActive;
-	public string[] dialogLines;
+	//public string[] dialogLines;
+	public List<string> dialogLines = new List<string>();
 	public int currentLine;
 
 	private PlayerController thePlayer;
@@ -26,7 +27,7 @@ public class DialogueManager : MonoBehaviour {
 			//dialogActive = false;
 			currentLine++;
 		}
-		if (currentLine >= dialogLines.Length) {
+		if (currentLine >= dialogLines.Count) {
 			dBox.SetActive (false);
 			dialogActive = false;
 			currentLine = 0;

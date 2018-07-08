@@ -6,7 +6,7 @@ public class DialogueHolder : MonoBehaviour {
 
 	public string dialogue;
 	private DialogueManager dMan;
-	public string[] dialogueLines;
+	public List<string> dialogueLines;
 
 	// Use this for initialization
 	void Start () {
