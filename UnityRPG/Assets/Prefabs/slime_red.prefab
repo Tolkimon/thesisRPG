@@ -141,6 +141,7 @@ MonoBehaviour:
   MaxHealth: 15
   CurrentHealth: 0
   expToGive: 25
+  enemyQuestName: RedSlime
 --- !u!212 &212693634989162858
 SpriteRenderer:
   m_ObjectHideFlags: 1
