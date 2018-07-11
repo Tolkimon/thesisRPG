@@ -1,2 +1,3 @@
-# thesisRPG
-try2 lng if stable ba makawork sa github HAHAHAHA
+# IT Project II
+Learning and motivational effects of gamification in aiding students’ understanding of basic object-oriented programming concepts in Java using an Android application
+
