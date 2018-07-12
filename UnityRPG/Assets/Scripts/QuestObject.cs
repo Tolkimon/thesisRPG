@@ -7,8 +7,8 @@ public class QuestObject : MonoBehaviour {
 	public int questNumber;
 	public QuestManager theQM;
 
-	public string startText;
-	public string endText;
+	public List<string> startText = new List<string>();
+	public List<string> endText= new List<string>();
 
 	public bool isItemQuest;
 	public string targetItem;

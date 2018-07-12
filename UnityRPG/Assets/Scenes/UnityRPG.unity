@@ -930,8 +930,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNumber: 1
   theQM: {fileID: 678189838}
-  startText: 
-  endText: 
+  startText: []
+  endText: []
   isItemQuest: 0
   targetItem: 
   isEnemyQuest: 0
@@ -2462,8 +2462,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNumber: 0
   theQM: {fileID: 678189838}
-  startText: Start the quest
-  endText: You did it!
+  startText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  endText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   isItemQuest: 0
   targetItem: 
   isEnemyQuest: 0
@@ -2765,8 +2791,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNumber: 2
   theQM: {fileID: 678189838}
-  startText: Go to the lake!
-  endText: You reached the lake!
+  startText:
+  - Go to the lake
+  - NOW
+  - NOW
+  endText:
+  - You found the lake
+  - Congrats
   isItemQuest: 0
   targetItem: 
   isEnemyQuest: 0
@@ -5258,8 +5289,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNumber: 3
   theQM: {fileID: 678189838}
-  startText: Find the yellow crystal.
-  endText: You got the crystal!
+  startText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  endText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   isItemQuest: 1
   targetItem: CrystalYellow
   isEnemyQuest: 0
@@ -7347,8 +7422,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNumber: 3
   theQM: {fileID: 678189838}
-  startText: Kill 3 Slimes
-  endText: You have killed the 3 slimes
+  startText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  endText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   isItemQuest: 0
   targetItem: 
   isEnemyQuest: 1

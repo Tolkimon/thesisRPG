@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public bool canMove;
 	// Use this for initialization
 	void Start () {
+		
 		anim = GetComponent<Animator> ();
 		myRigidBody = GetComponent<Rigidbody2D> ();
 
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		canMove = true;
-
+		lastMove = new Vector2 (0, -1);
 	}
 
 	// Update is called once per frame
@@ -95,8 +96,6 @@ public class PlayerController : MonoBehaviour {
 		anim.SetBool ("PlayerMoving", playerMoving);
 		anim.SetFloat ("LastMoveX", lastMove.x);
 		anim.SetFloat ("LastMoveY", lastMove.y);
-
-
 
 	}
 

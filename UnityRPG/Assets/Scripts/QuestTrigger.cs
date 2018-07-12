@@ -20,24 +20,25 @@ public class QuestTrigger : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerStay2D(Collider2D other){
 
-		if (other.gameObject.name == "Player" && !theQM.questCompleted [questNumber]){
+		if (Input.GetKeyUp (KeyCode.F) || endQuest) {
+			if (other.gameObject.name == "Player" && !theQM.questCompleted [questNumber]) {
 			
 
-			if (startQuest && !theQM.quests [questNumber].gameObject.activeSelf) {
-				theQM.quests [questNumber].gameObject.SetActive (true);
-				theQM.quests [questNumber].StartQuest ();
+				if (startQuest && !theQM.quests [questNumber].gameObject.activeSelf) {
+					theQM.quests [questNumber].gameObject.SetActive (true);
+					theQM.quests [questNumber].StartQuest ();
 			
-			}
-			if (endQuest && theQM.quests [questNumber].gameObject.activeSelf) {
+				}
+				if (endQuest && theQM.quests [questNumber].gameObject.activeSelf) {
 				
-				theQM.quests [questNumber].EndQuest ();
+					theQM.quests [questNumber].EndQuest ();
 
-			}
-		} 
+				}
+			} 
 
-
+		}
 	}
 
 }
