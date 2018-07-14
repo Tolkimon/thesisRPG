@@ -10,9 +10,13 @@ public class QuestTrigger : MonoBehaviour {
 	public bool startQuest;
 	public bool endQuest;
 
+	public BoxCollider2D dzone;
+	public BoxCollider2D qzone;
+
 	// Use this for initialization
 	void Start () {
 		theQM = FindObjectOfType<QuestManager> ();
+		dzone.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +38,8 @@ public class QuestTrigger : MonoBehaviour {
 				if (endQuest && theQM.quests [questNumber].gameObject.activeSelf) {
 				
 					theQM.quests [questNumber].EndQuest ();
+					dzone.enabled = true;
+					qzone.enabled = false;
 
 				}
 			} 

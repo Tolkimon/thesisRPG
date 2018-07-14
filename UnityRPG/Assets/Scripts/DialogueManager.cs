@@ -14,10 +14,12 @@ public class DialogueManager : MonoBehaviour {
 	public int currentLine;
 
 	private PlayerController thePlayer;
+	private VillagerMovement vm;
 
 	// Use this for initialization
 	void Start () {
 		thePlayer = FindObjectOfType<PlayerController> ();
+		vm = FindObjectOfType<VillagerMovement> ();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,7 @@ public class DialogueManager : MonoBehaviour {
 			dialogActive = false;
 			currentLine = 0;
 			thePlayer.canMove = true;
+			vm.canMove = true;
 		}
 		dText.text = dialogLines [currentLine];
 	}
@@ -49,5 +52,6 @@ public class DialogueManager : MonoBehaviour {
 		dialogActive = true;
 		dBox.SetActive (true);
 		thePlayer.canMove = false;
+		vm.canMove = false;
 	}
 }

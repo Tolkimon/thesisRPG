@@ -8,9 +8,11 @@ public class DialogueHolder : MonoBehaviour {
 	private DialogueManager dMan;
 	public List<string> dialogueLines;
 
+
 	// Use this for initialization
 	void Start () {
 		dMan = FindObjectOfType<DialogueManager> ();
+
 	}
 	
 	// Update is called once per frame
