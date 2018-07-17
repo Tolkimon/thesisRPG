@@ -6,6 +6,7 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	public int playerMaxHealth;
 	public int playerCurrentHealth;
+	public bool invincible = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,12 +22,22 @@ public class PlayerHealthManager : MonoBehaviour {
 	}
 
 	public void HurtPlayer(int damage) {
-		playerCurrentHealth -= damage;
+		if (!invincible) {
+			
+			playerCurrentHealth -= damage;
+
+			invincible = true;
+			Invoke ("resetInvulnerability", 2);
+		}
 		StartCoroutine ("HurtColor");
 	}
 
+	void resetInvulnerability(){
+		invincible = false;
+	}
+
 	IEnumerator HurtColor() {
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 8; i++) {
 			GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f); //Red, Green, Blue, Alpha/Transparency
 			yield return new WaitForSeconds (.1f);
 			GetComponent<SpriteRenderer>().color = Color.white; //White is the default "color" for the sprite, if you're curious.

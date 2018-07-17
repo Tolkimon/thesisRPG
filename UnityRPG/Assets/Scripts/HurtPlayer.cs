@@ -8,6 +8,7 @@ public class HurtPlayer : MonoBehaviour {
 	public GameObject damageNumber;
 	private int currentDamage;
 	private PlayerStats thePS;
+
 	// Use this for initialization
 	void Start () {
 		thePS = FindObjectOfType<PlayerStats> ();
@@ -27,10 +28,18 @@ public class HurtPlayer : MonoBehaviour {
 
 		}
 		if (other.gameObject.name == "Player") {
-			other.gameObject.GetComponent<PlayerHealthManager> ().HurtPlayer (currentDamage);
+			
+			if (other.gameObject.GetComponent<PlayerHealthManager> ().invincible == false) {
+				other.gameObject.GetComponent<PlayerHealthManager> ().HurtPlayer (currentDamage);
+				var clone = (GameObject)Instantiate (damageNumber, other.transform.position, Quaternion.Euler (Vector3.zero));
+				clone.GetComponent<FloatingNumbers> ().damageNumber = currentDamage;
 
-			var clone = (GameObject) Instantiate(damageNumber, other.transform.position, Quaternion.Euler (Vector3.zero));
-			clone.GetComponent<FloatingNumbers> ().damageNumber = currentDamage	;
+			}
+			if (gameObject.tag == "Bullet") {
+				Destroy (gameObject);	
+			}
+
+				 
 		}
 
 	}
