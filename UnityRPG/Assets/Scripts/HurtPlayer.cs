@@ -35,9 +35,9 @@ public class HurtPlayer : MonoBehaviour {
 				clone.GetComponent<FloatingNumbers> ().damageNumber = currentDamage;
 
 			}
-			if (gameObject.tag == "Bullet") {
-				Destroy (gameObject);	
-			}
+				if (gameObject.tag == "Bullet") {
+					Destroy (gameObject);	
+				}
 
 				 
 		}

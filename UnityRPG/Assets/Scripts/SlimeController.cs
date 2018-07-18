@@ -25,7 +25,7 @@ public class SlimeController : MonoBehaviour {
 
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
-	public float shootingrate=0.5f;
+	public float shootingrate=5f;
 	private float shootcooldown;
 
 	// Use this for initialization
@@ -36,6 +36,7 @@ public class SlimeController : MonoBehaviour {
 		shootcooldown = 0f;
 		timeBetweenMoveCounter = Random.Range (timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
 		timeToMoveCounter = Random.Range (timeToMove * 0.75f, timeBetweenMove * 1.25f);
+
 	}
 	
 	// Update is called once per frame
@@ -102,12 +103,12 @@ public class SlimeController : MonoBehaviour {
 			shootcooldown = shootingrate;
 			var bullet = (GameObject)Instantiate (
 				            bulletPrefab,
-				            bulletSpawn.position,
-				            transform.rotation);
-		
+				            transform.position,
+				transform.rotation);
+			Physics2D.IgnoreCollision(bullet.GetComponent<CircleCollider2D>(), GetComponent<CircleCollider2D>());
 			//bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * 6 * Time.deltaTime;
 			bullet.GetComponent<Rigidbody2D> ().AddForce (bulletSpawn.forward * 450);
-			Destroy (bullet, 1.5f);
+			Destroy (bullet, 1f);
 		}
 	}
 

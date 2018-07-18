@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 	private float attackTimeCounter;
 	public string startPoint;
 	public bool canMove;
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -32,10 +34,13 @@ public class PlayerController : MonoBehaviour {
 		}
 		canMove = true;
 		lastMove = new Vector2 (0, -1);
+
 	}
 
 	// Update is called once per frame
 	void Update () {
+		
+
 		if (!canMove) {
 
 			myRigidBody.velocity = Vector2.zero;
@@ -98,5 +103,6 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat ("LastMoveY", lastMove.y);
 
 	}
+
 
 }
