@@ -22,11 +22,11 @@ public class VillagerMovement : MonoBehaviour {
 	private bool hasWalkZone;
 
 	public bool canMove;
-	private DialogueManager theDM;
+	//private DialogueManager theDM;
 
 	// Use this for initialization
 	void Start () {
-		theDM = FindObjectOfType<DialogueManager> ();
+		//theDM = FindObjectOfType<DialogueManager> ();
 		myRigidbody = GetComponent<Rigidbody2D> ();
 		waitCounter = waitTime;
 		walkCounter = walkTime;
@@ -43,10 +43,10 @@ public class VillagerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (!theDM.dialogActive) {
+		/*if (!theDM.dialogActive) {
 
 			canMove = true;
-		}
+		}*/
 
 		if (!canMove) {
 			myRigidbody.velocity = Vector2.zero;

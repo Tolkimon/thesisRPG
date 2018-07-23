@@ -27,12 +27,14 @@ public class DialogueHolder : MonoBehaviour {
 			if (Input.GetKeyUp(KeyCode.F)) {
 
 				//dMan.ShowBox (dialogue);
+				/*
 				if (!dMan.dialogActive) {
 					dMan.dialogLines = dialogueLines;
 					dMan.currentLine = 0;
 					dMan.ShowDialogue ();
 
-				}
+				}*/
+
 				if (transform.parent.GetComponent<VillagerMovement> () != null) {
 
 					transform.parent.GetComponent<VillagerMovement> ().canMove = false;
