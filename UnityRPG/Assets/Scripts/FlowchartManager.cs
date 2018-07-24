@@ -22,7 +22,7 @@ public class FlowchartManager : MonoBehaviour {
 		if (other.gameObject.name == "Player") {
 
 			if (Input.GetKeyUp(KeyCode.F)) {
-
+				Debug.Log ("Hello");
 				flowchart.SetIntegerVariable ("NPC", NPCnum);
 				flowchart.ExecuteBlock ("Start");
 				if (transform.parent.GetComponent<VillagerMovement> () != null) {
