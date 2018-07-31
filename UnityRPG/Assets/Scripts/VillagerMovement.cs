@@ -111,4 +111,16 @@ public class VillagerMovement : MonoBehaviour {
 		walkCounter = walkTime;
 
 	}
+
+	public void disableMovement(){
+
+		canMove = false;
+
+	}
+	public void enableMovement(){
+
+		canMove = true;
+
+	}
+
 }
