@@ -112,15 +112,6 @@ public class VillagerMovement : MonoBehaviour {
 
 	}
 
-	public void disableMovement(){
 
-		canMove = false;
-
-	}
-	public void enableMovement(){
-
-		canMove = true;
-
-	}
 
 }
