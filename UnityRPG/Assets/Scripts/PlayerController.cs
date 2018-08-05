@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour {
 	public string startPoint;
 	public bool canMove;
 
+	string name;
+	Scene s;
 
 	// Use this for initialization
 	void Start () {
@@ -37,10 +40,20 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
+		/*if (scene.name == "Menu") {
+			gameObject.SetActive (false);
+
+		}else {
+			transform.gameObject.SetActive (true);
+
+		}*/
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
-
+		SceneManager.sceneLoaded += OnSceneLoaded;
 		if (!canMove) {
 
 			myRigidBody.velocity = Vector2.zero;

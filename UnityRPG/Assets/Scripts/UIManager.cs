@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
 
 	public Slider healthBar;
@@ -22,12 +23,23 @@ public class UIManager : MonoBehaviour {
 		}
 		thePS = GetComponent<PlayerStats> ();
 	}
-	
+	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
+		/*if (scene.name == "Menu") {
+			gameObject.SetActive (false);
+
+		}else {
+			transform.gameObject.SetActive (true);
+
+		}*/
+	}
 	// Update is called once per frame
 	void Update () {
-		healthBar.maxValue = playerHealth.playerMaxHealth;
-		healthBar.value = playerHealth.playerCurrentHealth;
-		HPText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
-		levelText.text = "Lvl: " + thePS.currentLevel;
+		SceneManager.sceneLoaded += OnSceneLoaded;
+		if (playerHealth != null) {
+			healthBar.maxValue = playerHealth.playerMaxHealth;
+			healthBar.value = playerHealth.playerCurrentHealth;
+			HPText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
+			levelText.text = "Lvl: " + thePS.currentLevel;
+		}
 	}
 }

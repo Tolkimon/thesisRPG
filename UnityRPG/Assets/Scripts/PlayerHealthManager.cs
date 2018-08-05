@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BayatGames.SaveGameFree;
 
 public class PlayerHealthManager : MonoBehaviour {
 
@@ -10,7 +11,12 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerCurrentHealth = playerMaxHealth;
+		if (SaveGame.Exists("currenthp")) {
+			Load ();
+		} 
+		else {
+			playerCurrentHealth = playerMaxHealth;
+		}
 	}
 	
 	// Update is called once per frame
@@ -19,6 +25,19 @@ public class PlayerHealthManager : MonoBehaviour {
 			gameObject.SetActive (false);
 
 		}
+	}
+
+	public void Save(){
+
+		SaveGame.Save<int>("currenthp", playerCurrentHealth);
+		SaveGame.Save<int>("maxhp", playerMaxHealth);
+
+	}
+
+	public void Load(){
+
+		playerCurrentHealth = SaveGame.Load<int>("currenthp");
+		playerMaxHealth = SaveGame.Load<int>("maxhp");
 	}
 
 	public void HurtPlayer(int damage) {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestObject : MonoBehaviour {
 	
 	public int questNumber;
-	public QuestManager theQM;
+	//public QuestManager theQM;
 
 	public List<string> startText = new List<string>();
 	public List<string> endText= new List<string>();
@@ -26,7 +26,7 @@ public class QuestObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isItemQuest) {
+		/*if (isItemQuest) {
 
 			if (theQM.itemCollected == targetItem) {
 				theQM.itemCollected = null;
@@ -35,6 +35,7 @@ public class QuestObject : MonoBehaviour {
 			}
 
 		}
+
 		if (isEnemyQuest) {
 
 			if (theQM.enemyKilled == targetEnemy) {
@@ -46,18 +47,18 @@ public class QuestObject : MonoBehaviour {
 
 				EndQuest ();
 			}
-		}
+		}*/
 	}
 
 	public void StartQuest(){
-		theQM.ShowQuestText (startText);
+		//theQM.ShowQuestText (startText);
 
 	}
 
 	public void EndQuest(){
 
-		theQM.ShowQuestText (endText);
-		theQM.questCompleted [questNumber] = true;
-		gameObject.SetActive (false);
+		//theQM.ShowQuestText (endText);
+		//theQM.questCompleted [questNumber] = true;
+		//gameObject.SetActive (false);
 	}
 }

@@ -6,7 +6,7 @@ public class Pause : MonoBehaviour {
 
 	private PlayerController pc;
 	public GameObject panel;
-
+	public Text pauseText;
 
 	void Start () {
 		pc = FindObjectOfType<PlayerController> ();
@@ -18,12 +18,14 @@ public class Pause : MonoBehaviour {
 			panel.SetActive (true);
 			Time.timeScale = 0;
 			pc.canMove = false;
+			pauseText.text = "Resume";
 		} 
 		else {
 
 			Time.timeScale = 1;
 			pc.canMove = true;
 			panel.SetActive (false);
+			pauseText.text = "Pause";
 		}
 	}
 }
