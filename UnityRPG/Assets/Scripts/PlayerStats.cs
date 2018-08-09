@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BayatGames.SaveGameFree;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -36,10 +37,22 @@ public class PlayerStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		SceneManager.sceneLoaded += OnSceneLoaded;
 		if (currentExp >= toLevelUp[currentLevel]) {
 			//currentLevel++;
 			LevelUp();
 		}
+	}
+
+	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
+		if (!SaveGame.Exists("lvl")) {
+			currentHP = HPLevels [1];
+			currentAttack = attackLevels [1];
+			currentDefense = defenseLevels [1];
+			currentLevel = 1;
+			currentExp = 0;
+		}
+
 	}
 
 	public void Save(){

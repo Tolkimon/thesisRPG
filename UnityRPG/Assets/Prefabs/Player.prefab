@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 50703928553158776}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,8 @@ MonoBehaviour:
   lastMove: {x: 0, y: 0}
   attackTime: 0
   startPoint: 
+  canMove: 0
+  playerprefab: {fileID: 1457482701103696}
 --- !u!212 &212121755101941742
 SpriteRenderer:
   m_ObjectHideFlags: 1

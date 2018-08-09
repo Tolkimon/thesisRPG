@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using BayatGames.SaveGameFree;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour {
 
@@ -11,31 +12,43 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		if (SaveGame.Exists("currenthp")) {
 			Load ();
 		} 
 		else {
-			playerCurrentHealth = playerMaxHealth;
+			playerCurrentHealth = 50;
+			playerMaxHealth = 50;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		SceneManager.sceneLoaded += OnSceneLoaded;
 		if (playerCurrentHealth <= 0) {
 			gameObject.SetActive (false);
 
 		}
 	}
 
-	public void Save(){
+	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
+		if (!SaveGame.Exists("currenthp")) {
+			playerCurrentHealth = 50;
+			playerMaxHealth = 50;
+		}
 
+	}
+
+	public void Save(){
+		
 		SaveGame.Save<int>("currenthp", playerCurrentHealth);
 		SaveGame.Save<int>("maxhp", playerMaxHealth);
 
 	}
 
 	public void Load(){
-
+		
 		playerCurrentHealth = SaveGame.Load<int>("currenthp");
 		playerMaxHealth = SaveGame.Load<int>("maxhp");
 	}

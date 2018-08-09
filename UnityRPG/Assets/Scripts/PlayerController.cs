@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using BayatGames.SaveGameFree.Types;
+using BayatGames.SaveGameFree;
 
 public class PlayerController : MonoBehaviour {
 
@@ -18,9 +20,11 @@ public class PlayerController : MonoBehaviour {
 	private float attackTimeCounter;
 	public string startPoint;
 	public bool canMove;
-
+	public GameObject startpoint;
 	string name;
 	Scene s;
+	public string identifier = "savePosition.dat";
+	private int saved;
 
 	// Use this for initialization
 	void Start () {
@@ -35,25 +39,39 @@ public class PlayerController : MonoBehaviour {
 		else {
 			Destroy (gameObject);
 		}
+		if (SaveGame.Exists("saved")) {
+			Load ();
+		}
 		canMove = true;
 		lastMove = new Vector2 (0, -1);
 
 	}
 
+	public void Save(){
+		saved = 1;
+		SaveGame.Save<int>("saved", saved);
+		SaveGame.Save<Vector3Save> (identifier, transform.position);
+
+	}
+
+	public void Load(){
+		saved = SaveGame.Load<int>("saved");
+		transform.position = SaveGame.Load<Vector3Save> (identifier,Vector3.zero);
+
+	}
+
 	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
-		/*if (scene.name == "Menu") {
-			gameObject.SetActive (false);
+		if (!SaveGame.Exists ("saved")) {
+			startpoint = GameObject.FindGameObjectWithTag ("StartPoint");
+			transform.position = startpoint.transform.position;
 
-		}else {
-			transform.gameObject.SetActive (true);
-
-		}*/
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
 		SceneManager.sceneLoaded += OnSceneLoaded;
+		//SceneManager.sceneLoaded += OnSceneLoaded;
 		if (!canMove) {
 
 			myRigidBody.velocity = Vector2.zero;
