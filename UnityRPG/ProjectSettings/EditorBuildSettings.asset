@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UnityRPG.unity
     guid: 58451ccf63e8586479256294445bae54
+  - enabled: 1
+    path: Assets/Scenes/Forest1.unity
+    guid: 8cff0d67f09efaa47b6e5be9508af1cd

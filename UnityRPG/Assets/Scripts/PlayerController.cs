@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
-		if (!SaveGame.Exists ("saved")) {
+		if (!SaveGame.Exists ("saved") && SceneManager.GetActiveScene().buildIndex - 1 == 0) {
 			startpoint = GameObject.FindGameObjectWithTag ("StartPoint");
 			transform.position = startpoint.transform.position;
 

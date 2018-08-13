@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadNewArea : MonoBehaviour {
 	
-	public string levelToLoad;
 	public string exitPoint;
+	public string sceneName;
 	private PlayerController thePlayer;
 
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class LoadNewArea : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 
 		if (other.gameObject.name == "Player") {
-			SceneManager.LoadScene(levelToLoad);﻿
+			SceneManager.LoadScene(sceneName);﻿
 			thePlayer.startPoint = exitPoint;
 		}
 
