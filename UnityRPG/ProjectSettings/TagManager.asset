@@ -8,6 +8,10 @@ TagManager:
   - Bullet
   - Object
   - StartPoint
+  - SceneChanger
+  - Pause
+  - Save
+  - Panel
   layers:
   - Default
   - TransparentFX

@@ -50,7 +50,9 @@ public class QuestItem : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.name == "Player") {
 			if (Input.GetKeyUp (KeyCode.F)) {
-				
+				if (pause == null) {
+					pause = GameObject.FindGameObjectWithTag ("Pause").GetComponent<Button> ();
+				}
 				flowchart.ExecuteBlock (itemName);
 				pc.canMove = false;
 				pause.enabled = false;

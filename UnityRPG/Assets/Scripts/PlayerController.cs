@@ -25,12 +25,14 @@ public class PlayerController : MonoBehaviour {
 	Scene s;
 	public string identifier = "savePosition.dat";
 	private int saved;
+	private SFXManager sfxMan;
 
 	// Use this for initialization
 	void Start () {
 		
 		anim = GetComponent<Animator> ();
 		myRigidBody = GetComponent<Rigidbody2D> ();
+		sfxMan = FindObjectOfType<SFXManager> ();
 
 		if (!playerExists) {
 			playerExists = true;

@@ -29,7 +29,9 @@ public class Menu : MonoBehaviour {
 	}
 
 	public void Play(){
-		SceneManager.LoadScene (SaveGame.Load<string>("scene"));
+
+		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+		//SceneManager.LoadScene (SaveGame.Load<string>("scene"));
 
 	}
 
@@ -46,7 +48,6 @@ public class Menu : MonoBehaviour {
 	public void newGame(){
 		SaveGame.DeleteAll ();
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
-
-
 	}
+		
 }

@@ -9,10 +9,10 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int playerMaxHealth;
 	public int playerCurrentHealth;
 	public bool invincible = false;
-
+	private SFXManager sfxMan;
 	// Use this for initialization
 	void Start () {
-
+		sfxMan = FindObjectOfType<SFXManager> ();
 		if (SaveGame.Exists("currenthp")) {
 			Load ();
 		} 
@@ -57,7 +57,7 @@ public class PlayerHealthManager : MonoBehaviour {
 		if (!invincible) {
 			
 			playerCurrentHealth -= damage;
-
+			sfxMan.playerHurt.Play ();
 			invincible = true;
 			Invoke ("resetInvulnerability", 2);
 		}
