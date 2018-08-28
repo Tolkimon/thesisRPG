@@ -27,9 +27,10 @@ public class CameraController : MonoBehaviour {
 		else {
 			Destroy (gameObject);
 		}
-		minBounds = boundBox.bounds.min;
-		maxBounds = boundBox.bounds.max;
-
+		if (boundBox != null) {
+			minBounds = boundBox.bounds.min;
+			maxBounds = boundBox.bounds.max;
+		}
 		theCamera = GetComponent<Camera> ();
 		halfHeight = theCamera.orthographicSize;
 		halfWidth = halfHeight * Screen.width / Screen.height;
@@ -51,6 +52,10 @@ public class CameraController : MonoBehaviour {
 		//SceneManager.sceneLoaded += OnSceneLoaded;
 
 		//get position of target
+		if (followTarget == null && SceneManager.GetActiveScene().buildIndex != 0) {
+			followTarget = GameObject.FindWithTag("Player");
+
+		}
 		if (followTarget != null) {
 			targetPos = new Vector3 (followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
 			// a= current camera position, b= current player position, t= movespeed of camera

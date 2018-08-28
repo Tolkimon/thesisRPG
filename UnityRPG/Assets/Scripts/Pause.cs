@@ -7,9 +7,11 @@ public class Pause : MonoBehaviour {
 	private PlayerController pc;
 	public GameObject panel;
 	public Text pauseText;
+	private MusicController theMC;
 
 	void Start () {
 		pc = FindObjectOfType<PlayerController> ();
+		theMC = FindObjectOfType<MusicController> ();
 	}
 
 
@@ -19,6 +21,7 @@ public class Pause : MonoBehaviour {
 			Time.timeScale = 0;
 			pc.canMove = false;
 			pauseText.text = "Resume";
+			theMC.musicCanPlay = false;
 		} 
 		else {
 
@@ -26,6 +29,7 @@ public class Pause : MonoBehaviour {
 			pc.canMove = true;
 			panel.SetActive (false);
 			pauseText.text = "Pause";
+			theMC.musicCanPlay = true;
 		}
 	}
 }
