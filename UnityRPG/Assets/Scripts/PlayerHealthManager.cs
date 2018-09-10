@@ -10,6 +10,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int playerCurrentHealth;
 	public bool invincible = false;
 	private SFXManager sfxMan;
+	public GameObject startpoint;
 	// Use this for initialization
 	void Start () {
 		sfxMan = FindObjectOfType<SFXManager> ();
@@ -24,11 +25,16 @@ public class PlayerHealthManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 		SceneManager.sceneLoaded += OnSceneLoaded;
+		if (startpoint == null) {
+			startpoint = GameObject.FindGameObjectWithTag("StartPoint");
+		}
 		if (playerCurrentHealth <= 0) {
-			gameObject.SetActive (false);
+			//gameObject.SetActive (false);
 
+			gameObject.transform.position =  startpoint.transform.position;
+			SetMaxHealth ();
 		}
 	}
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using BayatGames.SaveGameFree.Types;
 using BayatGames.SaveGameFree;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
@@ -84,8 +85,8 @@ public class PlayerController : MonoBehaviour {
 
 			// longer
 			playerMoving = false;
-			float movementInputX = Input.GetAxisRaw("Horizontal");
-			float movementInputY = Input.GetAxisRaw("Vertical");
+			float movementInputX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+			float movementInputY = CrossPlatformInputManager.GetAxisRaw("Vertical");
 
 			Vector2 direction = new Vector2(movementInputX, movementInputY);
 			direction.Normalize();
@@ -129,8 +130,8 @@ public class PlayerController : MonoBehaviour {
 		}
 		//shorter
 		//transform.Translate (Input.GetAxisRaw ("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw ("Vertical") * moveSpeed * Time.deltaTime, 0)﻿;
-		anim.SetFloat("MoveX",Input.GetAxisRaw("Horizontal"));
-		anim.SetFloat ("MoveY", Input.GetAxisRaw ("Vertical"));
+		anim.SetFloat("MoveX",CrossPlatformInputManager.GetAxisRaw("Horizontal"));
+		anim.SetFloat ("MoveY", CrossPlatformInputManager.GetAxisRaw ("Vertical"));
 		anim.SetBool ("PlayerMoving", playerMoving);
 		anim.SetFloat ("LastMoveX", lastMove.x);
 		anim.SetFloat ("LastMoveY", lastMove.y);

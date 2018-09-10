@@ -12,13 +12,13 @@ public class MusicController : MonoBehaviour {
 	public bool musicCanPlay;
 	// Use this for initialization
 	void Start () {
-		if (!mcExists) {
+		/*if (!mcExists) {
 			mcExists = true;
 			DontDestroyOnLoad (transform.gameObject);
 
 		} else {
 			Destroy (gameObject);
-		}
+		}*/
 	}
 	
 	// Update is called once per frame

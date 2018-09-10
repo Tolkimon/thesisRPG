@@ -21,7 +21,9 @@ public class VolumeController : MonoBehaviour {
 	}
 
 	public void SetAudioLevel(float volume){
-
+		if (theAudio == null) {
+			theAudio = GetComponent<AudioSource> ();
+		}
 		audioLevel = defaultAudio * volume;
 		theAudio.volume = audioLevel;
 
