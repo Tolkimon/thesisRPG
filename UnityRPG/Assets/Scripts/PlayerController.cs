@@ -83,7 +83,6 @@ public class PlayerController : MonoBehaviour {
 
 		if (!attacking) {
 
-			// longer
 			playerMoving = false;
 			float movementInputX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 			float movementInputY = CrossPlatformInputManager.GetAxisRaw("Vertical");
@@ -96,7 +95,6 @@ public class PlayerController : MonoBehaviour {
 
 			if ((movementInputX != 0f && movementInputY !=0f) || (movementInputX !=0f || movementInputY != 0f))
 			{
-				//transform.Translate(new Vector3(direction.x, direction.y, 0f));
 				myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
 				myRigidBody.velocity = direction;
 				playerMoving = true;
@@ -112,7 +110,8 @@ public class PlayerController : MonoBehaviour {
 			{
 				myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f);
 			}
-			if (Input.GetKeyDown (KeyCode.J)) {
+
+			if (CrossPlatformInputManager.GetButton("Shoot")) {
 				attackTimeCounter = attackTime;
 				attacking = true;
 				myRigidBody.velocity = Vector2.zero;

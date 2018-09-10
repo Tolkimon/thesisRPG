@@ -22,7 +22,12 @@ public class PlayerHealthManager : MonoBehaviour {
 			playerMaxHealth = 50;
 		}
 	}
-	
+
+	public void Load(){
+
+		playerCurrentHealth = SaveGame.Load<int>("currenthp");
+		playerMaxHealth = SaveGame.Load<int>("maxhp");
+	}
 	// Update is called once per frame
 	void Update () {
 		
@@ -53,11 +58,6 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	}
 
-	public void Load(){
-		
-		playerCurrentHealth = SaveGame.Load<int>("currenthp");
-		playerMaxHealth = SaveGame.Load<int>("maxhp");
-	}
 
 	public void HurtPlayer(int damage) {
 		if (!invincible) {

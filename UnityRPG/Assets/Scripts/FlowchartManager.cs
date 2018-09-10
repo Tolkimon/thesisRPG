@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class FlowchartManager : MonoBehaviour {
 	public Flowchart flowchart;
@@ -32,7 +33,7 @@ public class FlowchartManager : MonoBehaviour {
 
 		if (other.gameObject.name == "Player") {
 
-			if (Input.GetKeyUp(KeyCode.F)) {
+			if (CrossPlatformInputManager.GetButton("Interact")) {
 				if (pause == null) {
 					pause = GameObject.FindGameObjectWithTag ("Pause").GetComponent<Button> ();
 				}

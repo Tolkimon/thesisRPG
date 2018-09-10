@@ -11,8 +11,7 @@ public class StaticSlimeController : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
 		if (shootcooldown > 0) {
@@ -30,7 +29,6 @@ public class StaticSlimeController : MonoBehaviour {
 				transform.position,
 				transform.rotation);
 			Physics2D.IgnoreCollision(bullet.GetComponent<CircleCollider2D>(), GetComponent<CircleCollider2D>());
-			//bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * 6 * Time.deltaTime;
 			bullet.GetComponent<Rigidbody2D> ().AddForce (transform.right * 350f);
 			Destroy (bullet, 1f);
 		}

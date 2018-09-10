@@ -4,6 +4,7 @@ using UnityEngine;
 using Fungus;
 using UnityEngine.UI;
 using BayatGames.SaveGameFree;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class QuestItem : MonoBehaviour {
 	
@@ -49,7 +50,7 @@ public class QuestItem : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.name == "Player") {
-			if (Input.GetKeyUp (KeyCode.F)) {
+			if (CrossPlatformInputManager.GetButton("Interact")) {
 				if (pause == null) {
 					pause = GameObject.FindGameObjectWithTag ("Pause").GetComponent<Button> ();
 				}
@@ -59,7 +60,6 @@ public class QuestItem : MonoBehaviour {
 				pause.gameObject.SetActive (false);
 			}
 		}
-
 	}
 }
 
