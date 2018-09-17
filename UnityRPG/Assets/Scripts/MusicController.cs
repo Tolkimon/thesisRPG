@@ -10,18 +10,11 @@ public class MusicController : MonoBehaviour {
 	public int currentTrack;
 
 	public bool musicCanPlay;
-	// Use this for initialization
-	void Start () {
-		/*if (!mcExists) {
-			mcExists = true;
-			DontDestroyOnLoad (transform.gameObject);
 
-		} else {
-			Destroy (gameObject);
-		}*/
+	void Start () {
+
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (musicCanPlay) {
 			if (!musicTracks [currentTrack].isPlaying) {
