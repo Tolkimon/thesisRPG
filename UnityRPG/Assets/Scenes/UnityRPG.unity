@@ -688,15 +688,12 @@ GameObject:
   - component: {fileID: 310951412}
   - component: {fileID: 310951413}
   - component: {fileID: 310951414}
-  - component: {fileID: 310951423}
   - component: {fileID: 310951422}
   - component: {fileID: 310951421}
   - component: {fileID: 310951415}
   - component: {fileID: 310951416}
   - component: {fileID: 310951420}
   - component: {fileID: 310951419}
-  - component: {fileID: 310951418}
-  - component: {fileID: 310951417}
   - component: {fileID: 310951427}
   - component: {fileID: 310951426}
   - component: {fileID: 310951424}
@@ -720,6 +717,11 @@ GameObject:
   - component: {fileID: 310951437}
   - component: {fileID: 310951444}
   - component: {fileID: 310951445}
+  - component: {fileID: 310951446}
+  - component: {fileID: 310951448}
+  - component: {fileID: 310951447}
+  - component: {fileID: 310951450}
+  - component: {fileID: 310951449}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -740,11 +742,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 483.99835, y: -36.137985}
+  scrollPos: {x: 618.86633, y: -31.23688}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.9100001
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -752,8 +754,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 310951395}
-  selectedCommands: []
+  - {fileID: 310951393}
+  selectedCommands:
+  - {fileID: 310951449}
   variables:
   - {fileID: 310951397}
   - {fileID: 310951424}
@@ -782,7 +785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -62.631927
+    x: -61.533028
     y: 63.83177
     width: 120
     height: 40
@@ -825,9 +828,8 @@ MonoBehaviour:
   - {fileID: 310951402}
   - {fileID: 310951427}
   - {fileID: 310951414}
-  - {fileID: 310951423}
-  - {fileID: 310951418}
-  - {fileID: 310951417}
+  - {fileID: 310951450}
+  - {fileID: 310951449}
   - {fileID: 310951426}
   - {fileID: 310951434}
   - {fileID: 310951435}
@@ -1015,7 +1017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
-  storyText: Hello Im NPC 2
+  storyText: Hello.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1041,7 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: Hello Im NPC 1
+  storyText: Good day adventurer! You must be the one who wants to learn OOP, correct?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1109,7 +1111,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -239.10127
     y: 105.5717
-    width: 139
+    width: 146.70328
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1133,7 +1135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 0
-  text: OOP
+  text: Object-Oriented Programming
   description: 
   targetBlock: {fileID: 310951409}
   hideIfVisited: 0
@@ -1185,7 +1187,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -238.2572
     y: 61.714493
-    width: 134
+    width: 137.91208
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1195,6 +1197,9 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 310951408}
+  - {fileID: 310951446}
+  - {fileID: 310951448}
+  - {fileID: 310951447}
   - {fileID: 310951443}
 --- !u!114 &310951410
 MonoBehaviour:
@@ -1209,7 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
-  text: OPO
+  text: Out Of Place
   description: 
   targetBlock: {fileID: 310951406}
   hideIfVisited: 0
@@ -1235,7 +1240,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -240.05788
     y: 148.4288
-    width: 139
+    width: 146.70328
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1285,7 +1290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  text: Unity
+  text: Order Of Play
   description: 
   targetBlock: {fileID: 310951411}
   hideIfVisited: 0
@@ -1309,7 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 1
-  storyText: What does OOP mean?
+  storyText: Good job! You found the crystal.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1337,7 +1342,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 445.6661
     y: 141.34816
-    width: 178
+    width: 187.36263
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1374,54 +1379,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &310951417
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 310951390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 31
-  indentLevel: 1
-  text: None of the above
-  description: 
-  targetBlock: {fileID: 310951422}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
---- !u!114 &310951418
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 310951390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 30
-  indentLevel: 1
-  text: Object Oriented Programming
-  description: 
-  targetBlock: {fileID: 310951420}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
 --- !u!114 &310951419
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1463,7 +1420,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 453.70877
     y: 187.76395
-    width: 173
+    width: 178.57141
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1515,7 +1472,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 438.2503
     y: 99.136955
-    width: 178
+    width: 187.36263
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1526,30 +1483,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 310951421}
   - {fileID: 310951439}
---- !u!114 &310951423
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 310951390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 23
-  indentLevel: 1
-  text: Out Of Place
-  description: 
-  targetBlock: {fileID: 310951415}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
 --- !u!114 &310951424
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1579,7 +1512,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 95.77043
     y: 165.52094
-    width: 127
+    width: 129.12088
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1790,7 +1723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 43
   indentLevel: 1
-  storyText: Bring me a yellow crystal.
+  storyText: Bring me a yellow crystal first.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1846,7 +1779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 45
   indentLevel: 0
-  storyText: What is this game about?
+  storyText: But first let me ask you a question, what does OOP actually mean?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2129,6 +2062,142 @@ MonoBehaviour:
   gameObjectData:
     gameObjectRef: {fileID: 0}
     gameObjectVal: {fileID: 0}
+--- !u!114 &310951446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310951390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  indentLevel: 0
+  storyText: The other guy nearby will tell you about the concept of "objects" in
+    Java.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &310951447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310951390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  indentLevel: 0
+  variable: {fileID: 310951428}
+  setOperator: 0
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+--- !u!114 &310951448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310951390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  indentLevel: 0
+  storyText: But he will only tell you if you bring him a yellow crystal.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &310951449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310951390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 59
+  indentLevel: 1
+  storyText: An object is a self-contained component which consists of methods and
+    properties to make a particular type of data useful
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &310951450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310951390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 58
+  indentLevel: 1
+  storyText: This yellow crystal represents objects in OOP.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &361363130
 GameObject:
   m_ObjectHideFlags: 0
