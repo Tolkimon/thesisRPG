@@ -13,6 +13,9 @@ public class FlowchartManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pc = FindObjectOfType<PlayerController> ();
+		if (pause == null) {
+			pause = GameObject.FindGameObjectWithTag ("Pause").GetComponent<Button> ();
+		}
 	}
 	
 	// Update is called once per frame

@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour {
 	string name;
 	Scene s;
 	public Button load;
+	public GameObject mobile;
 	//public GameObject player;
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,8 @@ public class Menu : MonoBehaviour {
 	public void Play(){
 
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+		Time.timeScale = 1;
+	
 		//SceneManager.LoadScene (SaveGame.Load<string>("scene"));
 
 	}

@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199771048964916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5653334, y: -0.7452364, z: 0}
+  m_LocalPosition: {x: 7.25, y: -3.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4613964268325968}
@@ -185,7 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 15
   CurrentHealth: 0
-  expToGive: 25
+  expToGive: 5
+  flowchart: {fileID: 0}
   enemyQuestName: RedSlime
 --- !u!212 &212693634989162858
 SpriteRenderer:

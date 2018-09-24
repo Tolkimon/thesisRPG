@@ -8,9 +8,11 @@ using BayatGames.SaveGameFree;
 public class SceneChanger : MonoBehaviour {
 
 	public static SceneChanger Instance;
+	public GameObject mobile;
 	// Use this for initialization
 	void Awake ()   
 	{
+
 		if (Instance == null)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -36,7 +38,11 @@ public class SceneChanger : MonoBehaviour {
 	
 	void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode){
 		if (SceneManager.GetActiveScene ().buildIndex == 0) {
-			
+			/*if (mobile == null) {
+				mobile = GameObject.FindGameObjectWithTag ("MobileController");
+			}
+			mobile.SetActive (false);*/
+
 			//Destroy (gameObject);
 			GameObject[] allObjects = GameObject.FindGameObjectsWithTag("SceneChanger");
 			foreach(GameObject obj in allObjects) {

@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 		if (!SaveGame.Exists ("saved") && SceneManager.GetActiveScene().buildIndex - 1 == 0) {
 			startpoint = GameObject.FindGameObjectWithTag ("StartPoint");
 			transform.position = startpoint.transform.position;
-
+		
 		}
 	}
 

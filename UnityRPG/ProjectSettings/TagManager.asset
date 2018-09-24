@@ -12,6 +12,8 @@ TagManager:
   - Pause
   - Save
   - Panel
+  - Flowchart
+  - MobileController
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class EnemyHealthManager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	public int CurrentHealth;
 	private PlayerStats thePlayerStats;
 	public int expToGive;
+	public Flowchart flowchart;
 
 	public string enemyQuestName;
 
@@ -25,6 +27,8 @@ public class EnemyHealthManager : MonoBehaviour {
 			
 			Destroy (gameObject);
 			thePlayerStats.AddExperience (expToGive);
+			flowchart.SetIntegerVariable ("Enemies", flowchart.GetIntegerVariable ("Enemies") - 1);
+
 		}
 	}
 

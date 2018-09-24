@@ -11,9 +11,13 @@ public class LoadNewArea : MonoBehaviour {
 	private PlayerController thePlayer;
 	public Button save;
 	public Button pause;
+	public GameObject mobile;
 
 	// Use this for initialization
 	void Start () {
+
+		Time.timeScale = 1;
+
 		thePlayer = FindObjectOfType<PlayerController> ();
 
 	}
@@ -24,8 +28,11 @@ public class LoadNewArea : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
+		
 
 		if (other.gameObject.name == "Player") {
+			Time.timeScale = 1;
+		
 			if (pause == null) {
 				pause = GameObject.FindGameObjectWithTag ("Pause").GetComponent<Button> ();
 			}
@@ -36,7 +43,9 @@ public class LoadNewArea : MonoBehaviour {
 				pause.onClick.Invoke();
 			}
 			save.onClick.Invoke();
+
 			SceneManager.LoadScene(sceneName);﻿
+	
 			thePlayer.startPoint = exitPoint;
 		}
 
