@@ -22,6 +22,10 @@ public class Menu : MonoBehaviour {
 			load.interactable = false;
 		}
 	}
+
+	void Awake(){
+		Input.backButtonLeavesApp = true;
+	}
 	
 	// Update is called once per frame
 	void Update () {

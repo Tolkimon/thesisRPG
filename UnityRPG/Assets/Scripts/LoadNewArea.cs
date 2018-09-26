@@ -11,7 +11,7 @@ public class LoadNewArea : MonoBehaviour {
 	private PlayerController thePlayer;
 	public Button save;
 	public Button pause;
-	public GameObject mobile;
+	//public GameObject mobile;
 
 	// Use this for initialization
 	void Start () {

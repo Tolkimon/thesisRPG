@@ -6,7 +6,7 @@ public class PlayerStartPoint : MonoBehaviour {
 
 	private PlayerController thePlayer;
 	private CameraController theCamera;
-	public GameObject mobile;
+	//public GameObject mobile;
 
 	public Vector2 startDirection;
 	public string pointName;
@@ -23,18 +23,17 @@ public class PlayerStartPoint : MonoBehaviour {
 			theCamera = FindObjectOfType<CameraController> ();
 			theCamera.transform.position = new Vector3 (transform.position.x, transform.position.y, theCamera.transform.position.z);
 		}
-
+		/*
 		if (mobile == null) {
 			mobile = GameObject.FindGameObjectWithTag ("MobileController");
 		}
 		mobile.SetActive (false);
 		mobile.SetActive (true);
+		*/
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (mobile == null) {
-			mobile = GameObject.FindGameObjectWithTag ("MobileController");
-		}
+
 	}
 }

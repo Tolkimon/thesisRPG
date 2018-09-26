@@ -319,6 +319,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114627888020813064, guid: 878f5e93ef7bfee4eb707eb9be723e17,
+        type: 2}
+      propertyPath: flowchart
+      value: 
+      objectReference: {fileID: 799002463}
+    - target: {fileID: 114356377305513308, guid: 878f5e93ef7bfee4eb707eb9be723e17,
+        type: 2}
+      propertyPath: timeBetweenMove
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627888020813064, guid: 878f5e93ef7bfee4eb707eb9be723e17,
+        type: 2}
+      propertyPath: expToGive
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 58901600225997938, guid: 878f5e93ef7bfee4eb707eb9be723e17,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 878f5e93ef7bfee4eb707eb9be723e17, type: 2}
   m_IsPrefabParent: 0
@@ -517,8 +537,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 799002504}
-  selectedCommands:
-  - {fileID: 799002509}
+  selectedCommands: []
   variables:
   - {fileID: 799002464}
   - {fileID: 799002496}
@@ -2293,7 +2312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8ae856e00b22a439f26d9be61fe940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobile: {fileID: 0}
   startDirection: {x: 0, y: 0}
   pointName: Forest In
 --- !u!4 &1155767158
@@ -2398,7 +2416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8ae856e00b22a439f26d9be61fe940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobile: {fileID: 0}
   startDirection: {x: 0, y: 0}
   pointName: Forest 2 Out
 --- !u!4 &1274612152
@@ -2484,7 +2501,6 @@ MonoBehaviour:
   sceneName: Forest2
   save: {fileID: 0}
   pause: {fileID: 0}
-  mobile: {fileID: 0}
 --- !u!1 &1548869257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,7 +2546,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2688,6 +2704,16 @@ Prefab:
       propertyPath: flowchart
       value: 
       objectReference: {fileID: 799002463}
+    - target: {fileID: 114627888020813064, guid: 5bb028d161e1bf44c81d862c27aa2e53,
+        type: 2}
+      propertyPath: expToGive
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 58901600225997938, guid: 5bb028d161e1bf44c81d862c27aa2e53,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bb028d161e1bf44c81d862c27aa2e53, type: 2}
   m_IsPrefabParent: 0
@@ -2723,7 +2749,6 @@ MonoBehaviour:
   sceneName: UnityRPG
   save: {fileID: 0}
   pause: {fileID: 0}
-  mobile: {fileID: 0}
 --- !u!4 &2029940793
 Transform:
   m_ObjectHideFlags: 0
