@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 		anim = GetComponent<Animator> ();
 		myRigidBody = GetComponent<Rigidbody2D> ();
 		sfxMan = FindObjectOfType<SFXManager> ();
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 		if (!SaveGame.Exists ("saved") && SceneManager.GetActiveScene().buildIndex - 1 == 0) {
 			startpoint = GameObject.FindGameObjectWithTag ("StartPoint");
 			transform.position = startpoint.transform.position;
-		
+
 		}
 	}
 
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour {
 			direction *= moveSpeed * Time.deltaTime;
 			velocity = new Vector2 (movementInputX, movementInputY);
 			velocity *= moveSpeed;
-
+			/*
 			if ((movementInputX != 0f && movementInputY !=0f) || (movementInputX !=0f || movementInputY != 0f))
 			{
 				myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
@@ -109,6 +109,17 @@ public class PlayerController : MonoBehaviour {
 			if (movementInputY < 0.5f && movementInputY > -0.5f)
 			{
 				myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f);
+			}*/
+
+			if (CrossPlatformInputManager.GetAxisRaw("Horizontal") > 0.5f || CrossPlatformInputManager.GetAxisRaw("Horizontal") < -0.5f){      
+				transform.Translate(new Vector3(CrossPlatformInputManager.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));        
+				playerMoving = true;      
+				lastMove = new Vector2(CrossPlatformInputManager.GetAxisRaw("Horizontal"), 0f);   
+			} 
+			if (CrossPlatformInputManager.GetAxisRaw("Vertical") > 0.5f || CrossPlatformInputManager.GetAxisRaw("Vertical") < -0.5f)  {
+				transform.Translate(new Vector3(0f, CrossPlatformInputManager.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f)); 
+				playerMoving = true;   
+				lastMove = new Vector2(0f, CrossPlatformInputManager.GetAxisRaw("Vertical"));   
 			}
 
 			if (CrossPlatformInputManager.GetButton("Shoot")) {
