@@ -76,9 +76,9 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	IEnumerator HurtColor() {
 		for (int i = 0; i < 8; i++) {
-			GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f); //Red, Green, Blue, Alpha/Transparency
+			GetComponent<SpriteRenderer>().color = new Color (1f, 1f, 1f, 0.3f); 
 			yield return new WaitForSeconds (.1f);
-			GetComponent<SpriteRenderer>().color = Color.white; //White is the default "color" for the sprite, if you're curious.
+			GetComponent<SpriteRenderer>().color = Color.white;
 			yield return new WaitForSeconds (.1f);
 		}
 	} 

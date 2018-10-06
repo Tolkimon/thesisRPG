@@ -15,9 +15,13 @@ public class MobileDontDestroyOnLoad : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-	
+
+	public void EnableControlRig(bool enable){
+		transform.gameObject.SetActive (enable);
+
+	}
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

@@ -92,24 +92,7 @@ public class PlayerController : MonoBehaviour {
 			direction *= moveSpeed * Time.deltaTime;
 			velocity = new Vector2 (movementInputX, movementInputY);
 			velocity *= moveSpeed;
-			/*
-			if ((movementInputX != 0f && movementInputY !=0f) || (movementInputX !=0f || movementInputY != 0f))
-			{
-				myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
-				myRigidBody.velocity = direction;
-				playerMoving = true;
-				lastMove = new Vector2 (movementInputX, movementInputY);
-			}    
 
-			if (movementInputX < 0.5f && movementInputX > -0.5f)
-			{
-				myRigidBody.velocity = new Vector2(0f, myRigidBody.velocity.y);
-			}
-
-			if (movementInputY < 0.5f && movementInputY > -0.5f)
-			{
-				myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f);
-			}*/
 
 			if (CrossPlatformInputManager.GetAxisRaw("Horizontal") > 0.5f || CrossPlatformInputManager.GetAxisRaw("Horizontal") < -0.5f){      
 				transform.Translate(new Vector3(CrossPlatformInputManager.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));        

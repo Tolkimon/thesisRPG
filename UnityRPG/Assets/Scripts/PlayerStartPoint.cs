@@ -6,7 +6,7 @@ public class PlayerStartPoint : MonoBehaviour {
 
 	private PlayerController thePlayer;
 	private CameraController theCamera;
-	//public GameObject mobile;
+	private MobileDontDestroyOnLoad mobile;
 
 	public Vector2 startDirection;
 	public string pointName;
@@ -23,13 +23,10 @@ public class PlayerStartPoint : MonoBehaviour {
 			theCamera = FindObjectOfType<CameraController> ();
 			theCamera.transform.position = new Vector3 (transform.position.x, transform.position.y, theCamera.transform.position.z);
 		}
-		/*
-		if (mobile == null) {
-			mobile = GameObject.FindGameObjectWithTag ("MobileController");
-		}
-		mobile.SetActive (false);
-		mobile.SetActive (true);
-		*/
+		mobile = FindObjectOfType<MobileDontDestroyOnLoad> ();
+		mobile.EnableControlRig (false);
+		mobile.EnableControlRig (true);
+
 	}
 	
 	// Update is called once per frame

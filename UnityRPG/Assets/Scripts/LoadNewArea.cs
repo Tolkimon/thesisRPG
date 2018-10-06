@@ -47,6 +47,8 @@ public class LoadNewArea : MonoBehaviour {
 			SceneManager.LoadScene(sceneName);﻿
 	
 			thePlayer.startPoint = exitPoint;
+			pause.onClick.Invoke();
+			pause.onClick.Invoke();
 		}
 
 	}
